@@ -1,4 +1,4 @@
-import imgVivicap from "@/assets/vivicap.jpg";
+import imgVivicap from "@/assets/vivicap.webp";
 
 /**
  * Order bumps do checkout (ofertas logo acima do botão de finalizar).
@@ -33,12 +33,12 @@ export const ORDER_BUMPS: readonly OrderBumpItem[] = [
     price: 47.9,
     compareAt: 89.9,
     img: imgVivicap,
-    question: "Usa caneta de insulina? Nunca mais perca a hora da aplicação.",
-    body: "O ViviCap é uma tampa inteligente que encaixa na caneta de insulina e mostra na telinha há quanto tempo foi a última aplicação — sem aplicativo e sem configurar nada.",
+    question: "Usa caneta de insulina? Proteja ela do calor e do frio.",
+    body: "O ViviCap é uma tampa que encaixa na caneta de insulina e mantém a temperatura segura por horas — sem geladeira, sem bolsa térmica e sem gelo. Serve em todas as canetas e cabe no bolso.",
     benefits: [
-      "Mostra há quanto tempo foi a última dose",
-      "Encaixa na caneta de insulina",
-      "Sem aplicativo e sem configuração",
+      "Mantém a insulina na temperatura segura",
+      "Serve em todas as canetas de insulina",
+      "Sem geladeira, sem gelo, sem bateria",
     ],
     cta: "Sim! Quero o ViviCap por + {preco}",
   },
