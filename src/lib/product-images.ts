@@ -1,8 +1,8 @@
-import imgProduto from "@/assets/glicomax-produto.webp";
-import imgMedidas from "@/assets/glicomax-medidas.webp";
-import imgUsoNoite from "@/assets/glicomax-uso-noite.webp";
-import bannerStoreMobile from "@/assets/glicomax-banner-mobile.jpg";
-import bannerStoreDesktop from "@/assets/glicomax-banner-desktop.jpg";
+import imgProduto from "@/assets/glicomax-produto-novo.jpg";
+import imgMedidas from "@/assets/glicomax-medidas-novo.jpg";
+import imgUsoNoite from "@/assets/glicomax-uso-noite-novo.jpg";
+import bannerStoreMobile from "@/assets/glicomax-banner-mobile-novo.jpg";
+import bannerStoreDesktop from "@/assets/glicomax-banner-desktop-novo.jpg";
 
 export type BannerSlide = {
   mobile: string;
