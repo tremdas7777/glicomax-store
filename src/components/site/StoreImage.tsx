@@ -29,8 +29,10 @@ const variantStyles: Record<
     radius: "",
   },
   "product-hero": {
-    frame: "aspect-[3/2] w-full",
-    padding: "p-0",
+    /* Quadro branco com folga: a foto nunca encosta nas bordas do quadro */
+    frame:
+      "aspect-[4/3] w-full sm:aspect-[3/2] ring-1 ring-[rgba(13,13,13,0.06)] shadow-[0_24px_60px_-38px_rgba(13,13,13,0.35)]",
+    padding: "p-5 sm:p-10",
     contain: true,
     radius: "rounded-2xl",
   },
@@ -50,7 +52,8 @@ const variantStyles: Record<
   },
   "section-content": {
     frame: "aspect-video w-full md:aspect-[3/2]",
-    padding: "p-0",
+    padding: "p-4 md:p-8",
+    contain: true,
     radius: "rounded-2xl",
   },
   "section-full": {
