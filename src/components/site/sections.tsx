@@ -35,7 +35,7 @@ export function EditorialBanner() {
       </div>
       <div className="container-edge py-10 md:py-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
         <span className="eyebrow text-[var(--ink)]/60">
-          Kits de 1 a 3 unidades · Glicose e batimentos · Tela colorida
+          Kits de 1 a 3 unidades · Glicose e batimentos · Sem furar o dedo
         </span>
         <div className="flex items-center gap-4">
           <span className="rule" />
@@ -69,7 +69,7 @@ export function Hero() {
           </div>
           <div className="lg:col-span-4 pb-2 fade-up" style={{ animationDelay: "120ms" }}>
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[var(--ink)]/70 mb-8 sm:mb-10 max-w-sm">
-              Faça uma picadinha rápida, encoste a gota na tira e veja os números na tela. Sem aplicativo.
+              Coloque o dedo, aperte o botão e veja os números na tela. Sem furar, sem aplicativo.
             </p>
             <div className="flex items-center gap-6">
               <span className="rule" />
@@ -144,7 +144,7 @@ export function TrustProofSection() {
 }
 
 const idealFor = [
-  "Quer acompanhar a glicose em casa, de forma rápida e com uma picadinha só.",
+  "Quer acompanhar a glicose em casa sem furar o dedo e sem agulha.",
   "Acompanha os batimentos cardíacos no dia a dia ou depois de atividades físicas.",
   "Cuida de familiares e quer um aparelho simples para ter sempre por perto.",
   "Gosta de anotar os números para conversar com o médico nas consultas.",
@@ -193,9 +193,9 @@ function NumberedHeader({ number, title }: { number: string; title: string }) {
 
 /* ---------- 01 — Como funciona ---------- */
 const steps = [
-  { n: "01", title: "Insira a tira", text: "Insira a tira reagente no glicosímetro — ele liga sozinho, sem aplicativo e sem configuração." },
-  { n: "02", title: "Faça a picadinha", text: "Use a lanceta para fazer uma picadinha rápida na ponta do dedo." },
-  { n: "03", title: "Encoste a gota", text: "Encoste a gotinha de sangue na tira e aguarde alguns segundos." },
+  { n: "01", title: "Abra o clipe", text: "Aperte a parte de trás do aparelho para abrir o clipe — sem aplicativo e sem configuração." },
+  { n: "02", title: "Coloque o dedo", text: "Encaixe o indicador ou o dedo médio, com a unha para cima, até o fim." },
+  { n: "03", title: "Ligue e aguarde", text: "Aperte o botão e fique parado por alguns segundos." },
   { n: "04", title: "Veja os números", text: "A glicose (mg/dL) e os batimentos por minuto aparecem na tela colorida." },
 ];
 
@@ -223,18 +223,18 @@ export function HowItWorks() {
 const usageGuides = [
   {
     src: usePasso1,
-    alt: "Passo 1: insira a tira reagente no glicosímetro GlicoMax",
-    title: "Inserir a tira",
+    alt: "Passo 1: abra o clipe do glicosímetro GlicoMax",
+    title: "Abrir o clipe",
   },
   {
     src: usePasso2,
-    alt: "Passo 2: faça a picadinha com a lanceta na ponta do dedo",
-    title: "Fazer a picadinha",
+    alt: "Passo 2: encaixe o dedo no glicosímetro GlicoMax com a unha para cima",
+    title: "Colocar o dedo",
   },
   {
     src: usePasso3,
-    alt: "Passo 3: encoste a gota de sangue na tira e aguarde alguns segundos",
-    title: "Encostar a gota",
+    alt: "Passo 3: aperte o botão do glicosímetro GlicoMax e aguarde alguns segundos",
+    title: "Ligar e aguardar",
   },
   {
     src: usePasso4,
@@ -285,7 +285,7 @@ export function ProductUsageSection() {
 const intel = [
   "Glicose no sangue (mg/dL)",
   "Frequência cardíaca (bpm)",
-  "Tiras reagentes e lancetas inclusas",
+  "Sem furar o dedo: nada de agulha",
   "Tela colorida de fácil leitura",
   "Compacto: 5,7 × 3,1 × 3 cm",
 ];
@@ -327,9 +327,9 @@ export function AppSplit() {
 const compRows = [
   ["Glicose no sangue (mg/dL)", true, false],
   ["Batimentos por minuto", true, true],
+  ["Sem furar o dedo", true, false],
   ["Resultado em segundos", true, false],
   ["Sem contar no relógio", true, false],
-  ["Tiras reagentes e lancetas inclusas", true, false],
   ["Números na tela", true, false],
 ] as const;
 
@@ -442,7 +442,7 @@ export function EditorialQuote() {
         <div className="lg:col-span-5">
           <span className="eyebrow text-[var(--ink)]/40">No dia a dia</span>
           <blockquote className="font-display text-3xl md:text-5xl leading-tight mt-6 text-balance">
-            Faça a picadinha, encoste a gota na tira e pronto: a glicose e os batimentos aparecem na tela.
+            Encaixe o dedo, aperte e pronto: a glicose e os batimentos aparecem na tela, sem furar nada.
           </blockquote>
           <div className="mt-10 flex items-center gap-4">
             <span className="rule" />
@@ -478,28 +478,29 @@ const [kit1, kit2, kit3] = bundleData;
 export const faqItems = [
   {
     q: "O que é um glicosímetro?",
-    a: "É um aparelho que mede a glicose no sangue (mg/dL) a partir de uma gotinha de sangue colhida com uma picadinha rápida na ponta do dedo, usando uma tira reagente. O GlicoMax também mostra os batimentos cardíacos na mesma tela.",
+    a: "É um aparelho que mede a glicose no sangue (mg/dL). No GlicoMax, a leitura é feita pelo sensor no dedo: você encaixa o dedo, aperta o botão e os números aparecem na tela, sem agulha e sem gota de sangue. Ele também mostra os batimentos cardíacos na mesma leitura.",
   },
   {
     q: "O GlicoMax mede glicose?",
-    a: "Sim. O GlicoMax é um glicosímetro: mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também mostra os batimentos cardíacos (bpm) na mesma leitura.",
+    a: "Sim. O GlicoMax é um glicosímetro: mede a glicose no sangue (mg/dL) pelo sensor no dedo, sem furar, e também mostra os batimentos cardíacos (bpm) na mesma leitura.",
   },
   {
     q: "Como usar?",
-    a: "Lave e seque bem as mãos, insira a tira reagente no aparelho, faça uma picadinha rápida na ponta do dedo com a lanceta e encoste a gotinha de sangue na tira. Em poucos segundos, a glicose e os batimentos aparecem na tela.",
+    a: "Lave e seque bem as mãos, abra o clipe do aparelho, encaixe o dedo com a unha para cima até o fim, aperte o botão e fique parado por alguns segundos. A glicose e os batimentos aparecem na tela colorida.",
   },
   {
     q: "Qual a diferença entre os kits?",
     a: `Oferecemos 3 kits: ${unitsLabel(kit1!.units)} por ${fmt(kit1!.price)}; ${unitsLabel(kit2!.units)} por ${fmt(kit2!.price)} — o mais vendido; e ${unitsLabel(kit3!.units)} por ${fmt(kit3!.price)}, ideal para a família.`,
   },
   {
-    q: "O kit já vem com tiras e lancetas?",
-    a: "Sim. Cada kit inclui o glicosímetro GlicoMax, tiras reagentes e lancetas para você começar a usar assim que chegar.",
+    q: "Dói? Precisa furar o dedo?",
+    a: "Não. A glicose é lida pelo sensor no dedo, sem agulha, sem lanceta e sem gota de sangue. É só encaixar o dedo, apertar o botão e esperar alguns segundos.",
   },
   {
     q: "O glicosímetro substitui o médico?",
     a: "Não. Ele serve para acompanhar a glicose e os batimentos em casa. Os resultados não substituem avaliação médica, e qualquer alteração deve ser discutida com o seu médico.",
   },
+  { q: "Preciso comprar tiras ou lancetas?", a: "Não. Como a leitura é feita pelo sensor, não há tiras nem lancetas para repor — o aparelho já chega pronto para usar." },
   { q: "Precisa de aplicativo ou celular?", a: "Não. Os números aparecem na própria tela do glicosímetro." },
   { q: "Qual o tamanho do aparelho?", a: "5,7 × 3,1 × 3 cm — cabe no bolso, na bolsa ou na gaveta." },
   { q: "Como funciona o envio?", a: `${FREE_SHIPPING_LABEL} com rastreamento para todo o Brasil. Detalhes em nossa política de envio.` },

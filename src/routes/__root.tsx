@@ -21,7 +21,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import appCss from "../styles.css?url";
 
 const TITLE = "Glicosímetro GlicoMax | Glicose e Batimentos em Segundos";
-const DESCRIPTION = `Glicosímetro GlicoMax: mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também mostra os batimentos cardíacos em segundos, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`;
+const DESCRIPTION = `Glicosímetro GlicoMax: mede a glicose no sangue (mg/dL) pelo sensor no dedo, sem furar, e também mostra os batimentos cardíacos em segundos, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`;
 
 /** Scripts de pixel do <head> — só entram os que têm ID em src/lib/pixels.ts. */
 function pixelScripts() {
@@ -117,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "glicosímetro, medidor de glicose, glicose no sangue, tiras reagentes, lanceta, frequência cardíaca, batimentos, GlicoMax",
+          "glicosímetro, medidor de glicose, glicose no sangue, sem furar o dedo, sensor de glicose, frequência cardíaca, batimentos, GlicoMax",
       },
       { name: "robots", content: "index,follow" },
       { property: "og:site_name", content: brand.name },

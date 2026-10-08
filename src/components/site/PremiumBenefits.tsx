@@ -4,7 +4,7 @@ const benefits = [
   {
     Icon: Activity,
     title: "Glicose em segundos",
-    text: "Mostra a glicose no sangue poucos segundos depois de encostar a gota na tira.",
+    text: "Mostra a glicose no sangue poucos segundos depois de encaixar o dedo no sensor.",
   },
   {
     Icon: HeartPulse,
@@ -23,8 +23,8 @@ const benefits = [
   },
   {
     Icon: AudioWaveform,
-    title: "Tiras e lancetas inclusas",
-    text: "O kit já vem com tiras reagentes e lancetas para você começar a usar na hora.",
+    title: "Nada para repor",
+    text: "Sem tiras nem lancetas para comprar toda semana: o aparelho já chega pronto para usar.",
   },
   {
     Icon: Ruler,
@@ -33,8 +33,8 @@ const benefits = [
   },
   {
     Icon: Hand,
-    title: "Picadinha rápida",
-    text: "A lanceta faz uma picadinha rápida e quase indolor para colher a gota de sangue.",
+    title: "Sem furar o dedo",
+    text: "A glicose é lida pelo sensor, sem agulha, sem lanceta e sem gota de sangue.",
   },
   {
     Icon: Home,

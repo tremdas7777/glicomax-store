@@ -2,8 +2,8 @@
 export const brand = {
   name: "GlicoMax",
   productName: "Glicosímetro GlicoMax",
-  tagline: "Glicosímetro Digital",
-  taglineShort: "Glicose e batimentos em segundos",
+  tagline: "Glicosímetro digital · sem furar o dedo",
+  taglineShort: "Glicose e batimentos, sem furar o dedo",
   /**
    * Dados da empresa — preencha antes de publicar. Campos vazios ficam ocultos
    * no rodapé, no contato e nas políticas.

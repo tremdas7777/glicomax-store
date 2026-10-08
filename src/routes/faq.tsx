@@ -9,7 +9,7 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Tire dúvidas sobre o glicosímetro GlicoMax: como usar, o que ele mede, tiras e lancetas, kits, envio e garantia.",
+          "Tire dúvidas sobre o glicosímetro GlicoMax: como usar, o que ele mede, a leitura sem furar o dedo, kits, envio e garantia.",
       },
       { property: "og:title", content: "Perguntas frequentes sobre o glicosímetro GlicoMax" },
       {
