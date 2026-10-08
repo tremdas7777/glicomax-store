@@ -43,8 +43,7 @@ function Page() {
             srcMobile={homeImages.lifestyleRunning.mobile}
             srcDesktop={homeImages.lifestyleRunning.desktop}
             alt="Glicosímetro GlicoMax na mesa de cabeceira"
-            variant="section-banner"
-            bg={brand.colors.surfaceTint}
+            variant="section-full"
             loading="lazy"
           />
         </div>
