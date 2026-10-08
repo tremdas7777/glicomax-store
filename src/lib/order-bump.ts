@@ -1,21 +1,8 @@
+import imgVivicap from "@/assets/vivicap.jpg";
+
 /**
  * Order bumps do checkout (ofertas logo acima do botão de finalizar).
  * Preços usados no servidor — o cliente só exibe. Lista vazia = checkout sem bump.
- *
- * Para ativar uma oferta, adicione um item. Exemplo:
- *   {
- *     id: "estojo",
- *     name: "Estojo protetor",
- *     fullName: "Estojo protetor para o glicosímetro GlicoMax",
- *     gatewayName: "GlicoMax Estojo",
- *     price: 19.9,
- *     compareAt: 39.9,
- *     img: imgEstojo, // import imgEstojo from "@/assets/estojo.webp"
- *     question: "Vai levar o GlicoMax na bolsa?",
- *     body: "O estojo protege a tela e o clipe contra quedas e arranhões.",
- *     benefits: ["Fecho com zíper", "Cabe no bolso"],
- *     cta: "Sim! Quero o estojo por + {preco}",
- *   }
  */
 export type OrderBumpItem = {
   id: string;
@@ -37,7 +24,25 @@ export type OrderBumpItem = {
 
 export type BumpId = OrderBumpItem["id"];
 
-export const ORDER_BUMPS: readonly OrderBumpItem[] = [];
+export const ORDER_BUMPS: readonly OrderBumpItem[] = [
+  {
+    id: "vivicap",
+    name: "ViviCap",
+    fullName: "ViviCap — tampa inteligente para caneta de insulina",
+    gatewayName: "GlicoMax ViviCap",
+    price: 47.9,
+    compareAt: 89.9,
+    img: imgVivicap,
+    question: "Usa caneta de insulina? Nunca mais perca a hora da aplicação.",
+    body: "O ViviCap é uma tampa inteligente que encaixa na caneta de insulina e mostra na telinha há quanto tempo foi a última aplicação — sem aplicativo e sem configurar nada.",
+    benefits: [
+      "Mostra há quanto tempo foi a última dose",
+      "Encaixa na caneta de insulina",
+      "Sem aplicativo e sem configuração",
+    ],
+    cta: "Sim! Quero o ViviCap por + {preco}",
+  },
+];
 
 /** Bumps escolhidos, na ordem do checkout (ids repetidos ou desconhecidos são ignorados). */
 export const getBumps = (ids: readonly string[]) => ORDER_BUMPS.filter((b) => ids.includes(b.id));
