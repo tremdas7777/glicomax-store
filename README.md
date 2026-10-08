@@ -1,6 +1,17 @@
 # Glicomax Store
 
-vamos fazer a loja glicomax
+Loja do oxímetro de dedo GlicoMax, feita a partir da estrutura da loja AiDEX (painel `/admin`,
+checkout Pix/cartão, order bumps, upsell, envio expresso, UTMify, Meta e Rotasync).
+
+## Antes de publicar
+
+- **Banco**: ative o Lovable Cloud e rode as migrações de `supabase/migrations`.
+- **Segredos** (Lovable Cloud): `ADMIN_PASSWORD`, `PIXGATE_API_KEY`, `RASTREIO_API_KEY`
+  (Rotasync; opcional `RASTREIO_API_URL`). HyperCash, UTMify e Meta são cadastrados no `/admin`.
+- **Marca e empresa**: `src/lib/brand.ts` (razão social, CNPJ, e-mail, domínio, WhatsApp).
+- **Preços e kits**: `src/lib/bundles.ts` · **order bumps**: `src/lib/order-bump.ts`.
+- **Pixels do `<head>`**: `src/lib/pixels.ts` (Meta, TikTok, UTMify).
+- **Fotos**: `src/lib/product-images.ts` e `src/assets/` (as atuais são provisórias).
 
 This project was built with [Lovable](https://lovable.dev).
 
