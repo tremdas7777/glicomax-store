@@ -61,7 +61,7 @@ export const testMetaAdmin = createServerFn({ method: "POST" })
       eventId: `test-purchase-${Date.now()}`,
       url: brand.siteUrl ? `${brand.siteUrl}/` : undefined,
       user: { ...reqMeta(), email: "maria.teste@example.com", name: "Maria Teste Silva" },
-      customData: { value: 119.9, currency: "BRL", content_name: brand.productName, content_type: "product" },
+      customData: { value: 87.9, currency: "BRL", content_name: brand.productName, content_type: "product" },
     });
   });
 

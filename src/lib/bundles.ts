@@ -7,7 +7,7 @@ export const brl = (n: number) =>
   n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
 /** Valor mínimo (produtos, sem frete) para liberar o frete grátis. */
-export const FREE_SHIPPING_MIN = 119;
+export const FREE_SHIPPING_MIN = 87.9;
 export const FREE_SHIPPING_LABEL = `Frete grátis em compras acima de ${brl(FREE_SHIPPING_MIN)}`;
 
 export const isFreeShippingEligible = (subtotal: number) => subtotal >= FREE_SHIPPING_MIN;
@@ -41,7 +41,7 @@ export const bundles: Bundle[] = [
     id: "1",
     name: "1 Glicosímetro",
     units: 1,
-    price: 69.9,
+    price: 57.9,
     priceNote: "Para uso pessoal",
     description: "1 glicosímetro GlicoMax · glicose e batimentos",
     checkoutProductName: `${brand.productName} — 1 unidade`,
@@ -52,32 +52,32 @@ export const bundles: Bundle[] = [
     id: "2",
     name: "2 Glicosímetros",
     units: 2,
-    price: 119.9,
-    // "De": 2 unidades compradas separadas (2 × R$ 69,90).
-    compareAtPrice: 139.8,
-    priceNote: `${brl(119.9 / 2)} cada`,
+    price: 87.9,
+    // "De": 2 unidades compradas separadas (2 × R$ 57,90).
+    compareAtPrice: 115.8,
+    priceNote: `${brl(87.9 / 2)} cada`,
     description: "2 glicosímetros GlicoMax · um para você, outro para quem você cuida",
     checkoutProductName: `${brand.productName} — 2 unidades`,
     checkoutProductDescription: `${brand.productName} (2 unidades): ${PRODUCT_SUMMARY}. Frete grátis para todo o Brasil.`,
     checkoutUrl: "/checkout?plano=2",
     featured: true,
     badge: "Mais vendido",
-    savings: "Economize R$ 19,90",
+    savings: "Economize R$ 27,90",
   },
   {
     id: "3",
     name: "3 Glicosímetros",
     units: 3,
-    price: 159.9,
-    // "De": 3 unidades compradas separadas (3 × R$ 69,90).
-    compareAtPrice: 209.7,
-    priceNote: `${brl(159.9 / 3)} cada`,
+    price: 119.9,
+    // "De": 3 unidades compradas separadas (3 × R$ 57,90).
+    compareAtPrice: 173.7,
+    priceNote: `${brl(119.9 / 3)} cada`,
     description: "3 glicosímetros GlicoMax · kit para a família",
     checkoutProductName: `${brand.productName} — 3 unidades`,
     checkoutProductDescription: `${brand.productName} (3 unidades): ${PRODUCT_SUMMARY}. Frete grátis para todo o Brasil.`,
     checkoutUrl: "/checkout?plano=3",
     badge: "Kit família",
-    savings: "Economize R$ 49,80",
+    savings: "Economize R$ 53,80",
   },
 ];
 
