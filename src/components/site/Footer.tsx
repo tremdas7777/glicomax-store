@@ -19,7 +19,7 @@ import { getSiteSettings } from "@/lib/site-settings.functions";
 
 
 const productLinks = [
-  { label: "Oxímetro GlicoMax", to: "/produto" as const },
+  { label: "Glicosímetro GlicoMax", to: "/produto" as const },
   { label: "Kits", href: "/#planos" },
   { label: "Como funciona", href: "/#tecnologia" },
   { label: "Especificações", to: "/produto" as const },
@@ -40,7 +40,7 @@ const legalLinks = [
 
 const highlights = [
   { Icon: Truck, label: FREE_SHIPPING_LABEL },
-  { Icon: Activity, label: "SpO2" },
+  { Icon: Activity, label: "Glicose" },
   { Icon: HeartPulse, label: "Batimentos" },
   { Icon: Zap, label: "Leitura em segundos" },
   { Icon: ShieldCheck, label: "SSL seguro" },
@@ -94,7 +94,7 @@ export function Footer() {
   });
   const whatsappEnabled = settings?.whatsappEnabled ?? false;
   const whatsappHref = `https://wa.me/${brand.whatsapp.phoneE164}?text=${encodeURIComponent(
-    "Olá! Quero tirar uma dúvida sobre o oxímetro GlicoMax.",
+    "Olá! Quero tirar uma dúvida sobre o glicosímetro GlicoMax.",
   )}`;
 
 
@@ -103,7 +103,7 @@ export function Footer() {
       <div className="border-b border-white/10 bg-[var(--primary-deep)]">
         <div className="container-edge py-6 md:py-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <p className="font-display text-xl md:text-2xl leading-tight text-balance">
-            Saturação e batimentos na ponta do dedo, em segundos.
+            Glicose e batimentos na ponta do dedo, em segundos.
           </p>
           <Link
             to="/produto"

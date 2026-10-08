@@ -1,10 +1,10 @@
 import type { Bundle } from "@/lib/bundles";
 
-/** Upsell pós-compra (Pix e cartão): mais 1 kit igual ao comprado (mesma quantidade de oxímetros), com desconto. */
+/** Upsell pós-compra (Pix e cartão): mais 1 kit igual ao comprado (mesma quantidade de glicosímetros), com desconto. */
 export const UPSELL_DISCOUNT = 0.5;
 
 /** Nome do produto enviado ao gateway na cobrança de upsell no cartão. */
-export const UPSELL_GATEWAY_NAME = "Oxímetro GlicoMax";
+export const UPSELL_GATEWAY_NAME = "Glicosímetro GlicoMax";
 
 export const upsellPrice = (bundle: Bundle) =>
   Math.round(bundle.price * (1 - UPSELL_DISCOUNT) * 100) / 100;

@@ -29,15 +29,15 @@ export const Route = createFileRoute("/produto")({
   validateSearch: planSearchSchema,
   head: () => ({
     meta: [
-      { title: "Oxímetro de Dedo GlicoMax — Kits de 1 a 3 unidades | GlicoMax" },
+      { title: "Glicosímetro GlicoMax — Kits de 1 a 3 unidades | GlicoMax" },
       {
         name: "description",
-        content: `Compre o oxímetro de dedo GlicoMax: saturação de oxigênio (SpO2) e frequência cardíaca em segundos, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`,
+        content: `Compre o glicosímetro GlicoMax: mede a glicose no sangue com tiras reagentes e lanceta, e também a frequência cardíaca, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`,
       },
-      { property: "og:title", content: "Oxímetro de Dedo GlicoMax" },
+      { property: "og:title", content: "Glicosímetro GlicoMax" },
       {
         property: "og:description",
-        content: `SpO2 e batimentos na ponta do dedo, em segundos. A partir de ${brl(entryPrice)}.`,
+        content: `Glicose e batimentos na ponta do dedo, em segundos. A partir de ${brl(entryPrice)}.`,
       },
       { property: "og:url", content: "/produto" },
       { property: "og:image", content: productHeroImage },
@@ -50,10 +50,10 @@ export const Route = createFileRoute("/produto")({
 });
 
 const baseFeatures = [
-  { Icon: Activity, label: "Saturação de oxigênio (SpO2) em segundos" },
+  { Icon: Activity, label: "Glicose no sangue (mg/dL) em segundos" },
   { Icon: HeartPulse, label: "Frequência cardíaca na mesma tela" },
   { Icon: Sun, label: "Tela colorida, fácil de ler" },
-  { Icon: Pointer, label: "Um botão só · sem aplicativo" },
+  { Icon: Pointer, label: "Tiras reagentes e lancetas inclusas" },
 ] as const;
 
 const gallery = productGallery;
@@ -133,16 +133,16 @@ function Page() {
               {brand.productName}
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight text-balance">
-              Oxímetro <span className="italic">de dedo.</span>
+              Glicosímetro <span className="italic">digital.</span>
             </h1>
             <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--primary)]/10 px-4 py-2 text-sm font-medium text-[var(--primary)]">
               <Pointer className="w-4 h-4 shrink-0" strokeWidth={1.5} />
-              <span>Sem picada e sem aplicativo — é só colocar o dedo</span>
+              <span>Picadinha rápida, só uma gotinha de sangue — sem aplicativo</span>
             </div>
             <p className="mt-5 text-[var(--ink)]/70 leading-relaxed text-[15px]">
-              Mede a saturação de oxigênio no sangue (SpO2) e a frequência cardíaca em poucos segundos. Coloque o dedo,
-              aperte o botão e leia os números na tela colorida. Escolha o kit com 1, 2 ou 3 unidades — um para você e
-              outros para quem você cuida.
+              Mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também mostra a frequência cardíaca em
+              poucos segundos. Faça a picadinha, encoste a gota na tira e leia os números na tela colorida. Escolha o
+              kit com 1, 2 ou 3 unidades — um para você e outros para quem você cuida.
             </p>
 
             {/* Bundle selector */}
@@ -226,13 +226,13 @@ function Page() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(13,13,13,0.08)] border border-[rgba(13,13,13,0.08)] rounded-xl overflow-hidden">
             {/* Acrescente aqui os dados do manual do fabricante (alimentação, faixas de medição, precisão). */}
-            <Spec k="Mede" v="SpO2 e batimentos" />
+            <Spec k="Mede" v="Glicose e batimentos" />
             <Spec k="Tela" v="Colorida" />
             <Spec k="Indicador" v="Barra de pulso" />
             <Spec k="Operação" v="1 botão" />
             <Spec k="Dimensões" v="5,7 × 3,1 × 3 cm" />
             <Spec k="No kit" v={unitsLabel(bundle.units)} />
-            <Spec k="Uso" v="Doméstico · sem picada" />
+            <Spec k="Uso" v="Doméstico · tiras e lanceta" />
             <Spec k="Garantia" v="7 dias + suporte" />
           </div>
         </div>
@@ -246,7 +246,7 @@ function Page() {
           <div className="lg:col-span-6">
             <StoreImage
               src={productKitImage}
-              alt="Oxímetro de dedo GlicoMax"
+              alt="Glicosímetro GlicoMax"
               variant="section-content"
               bg="#ffffff"
               loading="lazy"
@@ -259,7 +259,7 @@ function Page() {
             </div>
             <ul className="space-y-5">
               {[
-                [`${bundle.units}× Oxímetro de dedo GlicoMax`, "SpO2 e batimentos · tela colorida"],
+                [`${bundle.units}× Glicosímetro GlicoMax`, "Tiras, lancetas e batimentos · tela colorida"],
                 ["Envio com rastreamento", bundleShippingLabel(bundle)],
                 ["Suporte humano", "Ajuda com o pedido e com o uso do aparelho"],
                 ["Garantia de 7 dias", "Direito de arrependimento (Código de Defesa do Consumidor)"],
@@ -290,7 +290,7 @@ function ProductStructuredData() {
     name: brand.productName,
     image: productHeroImage,
     description:
-      "Oxímetro de dedo GlicoMax: mede a saturação de oxigênio (SpO2) e a frequência cardíaca em segundos, com tela colorida. Kits de 1 a 3 unidades.",
+      "Glicosímetro GlicoMax: mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também a frequência cardíaca, com tela colorida. Kits de 1 a 3 unidades.",
     brand: {
       "@type": "Brand",
       name: brand.name,

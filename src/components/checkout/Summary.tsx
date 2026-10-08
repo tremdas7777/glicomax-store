@@ -27,8 +27,8 @@ function Body(p: Props) {
       <div className="mt-6 flex gap-3 border-t border-border pt-6">
         <img src={PRODUCT_IMG} alt="" width={56} height={56} className="h-14 w-14 rounded-md border border-border bg-white object-contain" />
         <div className="flex-1 text-[13px]">
-          <p>{bundle.checkoutProductName.split(" — ")[0]} — Oxímetro de Dedo</p>
-          <p className="mt-1 text-muted-foreground">{unitsLabel(bundle.units)} · SpO2 e batimentos</p>
+          <p>{bundle.checkoutProductName.split(" — ")[0]} — Glicosímetro</p>
+          <p className="mt-1 text-muted-foreground">{unitsLabel(bundle.units)} · Glicose e batimentos</p>
         </div>
         <span className="text-[13px]">{brl(bundle.price)}</span>
       </div>

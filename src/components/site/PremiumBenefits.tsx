@@ -3,13 +3,13 @@ import { Activity, AudioWaveform, Hand, HeartPulse, Home, Pointer, Ruler, Sun } 
 const benefits = [
   {
     Icon: Activity,
-    title: "SpO2 em segundos",
-    text: "Mostra a saturação de oxigênio no sangue poucos segundos depois de você colocar o dedo.",
+    title: "Glicose em segundos",
+    text: "Mostra a glicose no sangue poucos segundos depois de encostar a gota na tira.",
   },
   {
     Icon: HeartPulse,
     title: "Frequência cardíaca",
-    text: "Exibe os batimentos por minuto na mesma tela, junto com a saturação.",
+    text: "Exibe os batimentos por minuto na mesma tela, junto com a glicose.",
   },
   {
     Icon: Sun,
@@ -23,8 +23,8 @@ const benefits = [
   },
   {
     Icon: AudioWaveform,
-    title: "Indicador de pulso",
-    text: "A barra ao lado dos números mostra a intensidade do pulso durante a leitura.",
+    title: "Tiras e lancetas inclusas",
+    text: "O kit já vem com tiras reagentes e lancetas para você começar a usar na hora.",
   },
   {
     Icon: Ruler,
@@ -33,8 +33,8 @@ const benefits = [
   },
   {
     Icon: Hand,
-    title: "Clipe com mola",
-    text: "Abre e fecha sozinho e se acomoda ao dedo para a medição.",
+    title: "Picadinha rápida",
+    text: "A lanceta faz uma picadinha rápida e quase indolor para colher a gota de sangue.",
   },
   {
     Icon: Home,
@@ -53,7 +53,7 @@ export function PremiumBenefits({ id }: { id?: string }) {
             Simples de usar, <span className="italic">fácil de ler.</span>
           </h2>
           <p className="mt-5 text-[var(--ink)]/65 leading-relaxed">
-            Um oxímetro de dedo para acompanhar a saturação de oxigênio e os batimentos em casa, com leitura rápida e tela clara.
+            Um glicosímetro para acompanhar a glicose e os batimentos cardíacos em casa, com leitura rápida e tela clara.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">

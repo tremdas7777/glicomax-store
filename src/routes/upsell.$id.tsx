@@ -152,7 +152,7 @@ function Page() {
               </p>
               <p className="text-[15px] font-semibold">{bundle.name}</p>
               <p className="text-[13px] text-muted-foreground">
-                Mais {unitsLabel(bundle.units)} · SpO2 e batimentos
+                Mais {unitsLabel(bundle.units)} · Glicose e batimentos
               </p>
               <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
                 <span className="text-[13px] text-muted-foreground line-through">
@@ -163,7 +163,7 @@ function Page() {
             </div>
           </div>
           <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">
-            Tenha um oxímetro em cada lugar — casa, trabalho, bolsa — ou{" "}
+            Tenha um glicosímetro em cada lugar — casa, trabalho, bolsa — ou{" "}
             <b className="text-foreground">dê um para quem você cuida</b>. Enviado para o mesmo
             endereço, sem frete extra.
           </p>

@@ -6,7 +6,7 @@ const featured = availableBundles.find((b) => b.featured);
 const messages = [
   FREE_SHIPPING_LABEL,
   ...(featured ? [`Kit ${featured.name.toLowerCase()} — ${featured.badge?.toLowerCase() ?? "oferta"} · ${featured.savings?.toLowerCase() ?? ""}`] : []),
-  "Oxímetro GlicoMax · SpO2 e batimentos em segundos",
+  "Glicosímetro GlicoMax · Glicose e batimentos em segundos",
   "Compra segura · envio para todo o Brasil",
 ];
 

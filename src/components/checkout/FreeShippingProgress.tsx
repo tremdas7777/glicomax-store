@@ -58,7 +58,7 @@ export function FreeShippingProgress({
       {showUpgrade && (
         <div className="mt-3 rounded-md border border-[var(--ck-ok)]/30 bg-white p-3">
           <p className="text-[13px] leading-snug">
-            Leve <b>{upgrade.units} oxímetros</b> por{" "}
+            Leve <b>{upgrade.units} glicosímetros</b> por{" "}
             <b className="text-[var(--ck-ok)]">{brl(upgrade.price)}</b>
             {upgrade.compareAtPrice && upgrade.compareAtPrice > upgrade.price && (
               <> — economize {brl(upgrade.compareAtPrice - upgrade.price)}</>

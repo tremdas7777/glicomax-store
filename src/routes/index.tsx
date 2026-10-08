@@ -11,16 +11,16 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Oxímetro de Dedo GlicoMax | SpO2 e Batimentos em Segundos" },
+      { title: "Glicosímetro GlicoMax | Glicose e Batimentos em Segundos" },
       {
         name: "description",
         content:
-          "Oxímetro de dedo GlicoMax: saturação de oxigênio (SpO2) e frequência cardíaca em segundos, com tela colorida e um botão só. Kits de 1 a 3 unidades.",
+          "Glicosímetro GlicoMax: mede a glicose no sangue com tiras reagentes e lanceta, e também mostra a frequência cardíaca em segundos, com tela colorida. Kits de 1 a 3 unidades.",
       },
-      { property: "og:title", content: "Oxímetro de Dedo GlicoMax | SpO2 e Batimentos em Segundos" },
+      { property: "og:title", content: "Glicosímetro GlicoMax | Glicose e Batimentos em Segundos" },
       {
         property: "og:description",
-        content: `Oxímetro de dedo GlicoMax para medir saturação e batimentos em casa, sem picada e sem aplicativo. ${FREE_SHIPPING_LABEL} para todo o Brasil.`,
+        content: `Glicosímetro GlicoMax para medir glicose e batimentos em casa, com picadinha rápida e sem aplicativo. ${FREE_SHIPPING_LABEL} para todo o Brasil.`,
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -55,14 +55,14 @@ function SeoIntro() {
   return (
     <section className="border-b border-[rgba(13,13,13,0.08)] bg-white py-12 md:py-16">
       <div className="container-edge max-w-4xl">
-        <p className="eyebrow text-[var(--primary)] mb-4">Oxímetro de dedo GlicoMax</p>
+        <p className="eyebrow text-[var(--primary)] mb-4">Glicosímetro GlicoMax</p>
         <h2 className="font-display text-3xl md:text-5xl leading-tight text-balance">
-          Saturação de oxigênio e batimentos na ponta do dedo, em segundos.
+          Glicose e batimentos na ponta do dedo, em segundos.
         </h2>
         <p className="mt-5 text-sm md:text-base leading-relaxed text-[var(--ink)]/70">
-          O GlicoMax é um oxímetro de dedo para acompanhar em casa a saturação de oxigênio no sangue (SpO2) e a
-          frequência cardíaca. É só colocar o dedo e apertar o botão: os números aparecem na tela colorida, sem
-          picada e sem aplicativo. Escolha kits de 1 a 3 unidades.
+          O GlicoMax é um glicosímetro para acompanhar em casa a glicose no sangue (mg/dL) e os batimentos cardíacos.
+          Faça uma picadinha rápida com a lanceta, encoste a gota de sangue na tira e os números aparecem na tela
+          colorida, sem aplicativo. Escolha kits de 1 a 3 unidades.
         </p>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { brand } from "@/lib/brand";
 
-/** Kit por quantidade de oxímetros (1 / 2 / 3 unidades) */
+/** Kit por quantidade de glicosímetros (1 / 2 / 3 unidades) */
 export type BundleId = "1" | "2" | "3";
 
 export const brl = (n: number) =>
@@ -34,29 +34,29 @@ export type Bundle = {
 };
 
 const PRODUCT_SUMMARY =
-  "oxímetro de dedo que mostra a saturação de oxigênio (SpO2) e a frequência cardíaca em segundos, com tela colorida e operação por um botão";
+  "glicosímetro que mede a glicose no sangue (mg/dL) com tiras reagentes e lancetas, e também mostra os batimentos cardíacos, com tela colorida e operação por um botão";
 
 export const bundles: Bundle[] = [
   {
     id: "1",
-    name: "1 Oxímetro",
+    name: "1 Glicosímetro",
     units: 1,
     price: 89.9,
     priceNote: "Para uso pessoal",
-    description: "1 oxímetro GlicoMax · SpO2 e batimentos",
+    description: "1 glicosímetro GlicoMax · glicose e batimentos",
     checkoutProductName: `${brand.productName} — 1 unidade`,
     checkoutProductDescription: `${brand.productName}: ${PRODUCT_SUMMARY}. ${FREE_SHIPPING_LABEL}.`,
     checkoutUrl: "/checkout?plano=1",
   },
   {
     id: "2",
-    name: "2 Oxímetros",
+    name: "2 Glicosímetros",
     units: 2,
     price: 149.9,
     // "De": 2 unidades compradas separadas (2 × R$ 89,90).
     compareAtPrice: 179.8,
     priceNote: `${brl(149.9 / 2)} cada`,
-    description: "2 oxímetros GlicoMax · um para você, outro para quem você cuida",
+    description: "2 glicosímetros GlicoMax · um para você, outro para quem você cuida",
     checkoutProductName: `${brand.productName} — 2 unidades`,
     checkoutProductDescription: `${brand.productName} (2 unidades): ${PRODUCT_SUMMARY}. Frete grátis para todo o Brasil.`,
     checkoutUrl: "/checkout?plano=2",
@@ -66,13 +66,13 @@ export const bundles: Bundle[] = [
   },
   {
     id: "3",
-    name: "3 Oxímetros",
+    name: "3 Glicosímetros",
     units: 3,
     price: 199.9,
     // "De": 3 unidades compradas separadas (3 × R$ 89,90).
     compareAtPrice: 269.7,
     priceNote: `${brl(199.9 / 3)} cada`,
-    description: "3 oxímetros GlicoMax · kit para a família",
+    description: "3 glicosímetros GlicoMax · kit para a família",
     checkoutProductName: `${brand.productName} — 3 unidades`,
     checkoutProductDescription: `${brand.productName} (3 unidades): ${PRODUCT_SUMMARY}. Frete grátis para todo o Brasil.`,
     checkoutUrl: "/checkout?plano=3",
@@ -109,5 +109,5 @@ export function getUpgradeBundle(current: Bundle): Bundle | null {
 export const unitsLabel = (units: number) => `${units} ${units > 1 ? "unidades" : "unidade"}`;
 
 export function bundleDurationLabel(bundle: Bundle) {
-  return `${unitsLabel(bundle.units)} · SpO2 e batimentos`;
+  return `${unitsLabel(bundle.units)} · glicose e batimentos`;
 }

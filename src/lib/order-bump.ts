@@ -6,7 +6,7 @@
  *   {
  *     id: "estojo",
  *     name: "Estojo protetor",
- *     fullName: "Estojo protetor para o oxímetro GlicoMax",
+ *     fullName: "Estojo protetor para o glicosímetro GlicoMax",
  *     gatewayName: "GlicoMax Estojo",
  *     price: 19.9,
  *     compareAt: 39.9,

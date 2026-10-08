@@ -11,7 +11,7 @@ export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
       { title: "Contato | GlicoMax" },
-      { name: "description", content: "Fale com a equipe GlicoMax. Atendimento humano para pedidos e dúvidas sobre o oxímetro." },
+      { name: "description", content: "Fale com a equipe GlicoMax. Atendimento humano para pedidos e dúvidas sobre o glicosímetro." },
       { property: "og:title", content: "Contato GlicoMax" },
       { property: "og:description", content: "Fale com a equipe GlicoMax." },
       { property: "og:url", content: "/contato" },
@@ -30,7 +30,7 @@ function Page() {
   });
   const whatsappEnabled = settings?.whatsappEnabled ?? false;
   const whatsappHref = `https://wa.me/${brand.whatsapp.phoneE164}?text=${encodeURIComponent(
-    "Olá! Quero tirar uma dúvida sobre o oxímetro GlicoMax.",
+    "Olá! Quero tirar uma dúvida sobre o glicosímetro GlicoMax.",
   )}`;
   // O formulário não tem servidor de e-mail: abre o WhatsApp (ou o e-mail) com a mensagem pronta.
   const channel = whatsappEnabled ? "whatsapp" : brand.email ? "email" : null;
@@ -53,7 +53,7 @@ function Page() {
               Estamos aqui <br /><span className="italic">para ajudar.</span>
             </h1>
             <p className="mt-6 text-[var(--ink)]/70 leading-relaxed max-w-sm">
-              Fale com a nossa equipe sobre pedidos, entregas e o uso do oxímetro.
+              Fale com a nossa equipe sobre pedidos, entregas e o uso do glicosímetro.
             </p>
             <ul className="mt-12 space-y-6 text-sm">
               {brand.email && (
