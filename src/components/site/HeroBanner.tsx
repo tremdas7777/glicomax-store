@@ -21,7 +21,7 @@ export function HeroBanner() {
       <div className="border-b border-[rgba(13,13,13,0.08)] bg-[var(--paper)]">
         <div className="container-edge flex flex-col items-start justify-between gap-4 py-5 sm:flex-row sm:items-center sm:py-6">
           <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--ink)]/55">
-            Glicosímetro GlicoMax · Glicose e batimentos em segundos · Picadinha rápida · {FREE_SHIPPING_LABEL}
+            Glicosímetro GlicoMax · Glicose e batimentos em segundos · Sem furar o dedo · {FREE_SHIPPING_LABEL}
           </p>
           <div className="flex items-center">
             <Link

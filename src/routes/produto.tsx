@@ -19,7 +19,7 @@ import { brand } from "@/lib/brand";
 import { useState } from "react";
 import { productGallery, productHeroImage, productKitImage } from "@/lib/product-images";
 import { bundleIdFromSearch, planSearchSchema } from "@/lib/plan-search";
-import { ShieldCheck, Truck, RotateCcw, Activity, HeartPulse, Sun, Pointer, Package } from "lucide-react";
+import { ShieldCheck, Truck, RotateCcw, Activity, HeartPulse, Sun, Fingerprint, Package } from "lucide-react";
 import { StoreImage } from "@/components/site/StoreImage";
 import { trackCheckoutClick } from "@/lib/analytics";
 
@@ -32,12 +32,12 @@ export const Route = createFileRoute("/produto")({
       { title: "Glicosímetro GlicoMax — Kits de 1 a 3 unidades | GlicoMax" },
       {
         name: "description",
-        content: `Compre o glicosímetro GlicoMax: mede a glicose no sangue com tiras reagentes e lanceta, e também a frequência cardíaca, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`,
+        content: `Compre o glicosímetro GlicoMax: mede a glicose no sangue sem furar o dedo, pelo sensor, e também a frequência cardíaca, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`,
       },
       { property: "og:title", content: "Glicosímetro GlicoMax" },
       {
         property: "og:description",
-        content: `Glicose e batimentos na ponta do dedo, em segundos. A partir de ${brl(entryPrice)}.`,
+        content: `Glicose e batimentos sem furar o dedo, em segundos. A partir de ${brl(entryPrice)}.`,
       },
       { property: "og:url", content: "/produto" },
       { property: "og:image", content: productHeroImage },
@@ -53,7 +53,7 @@ const baseFeatures = [
   { Icon: Activity, label: "Glicose no sangue (mg/dL) em segundos" },
   { Icon: HeartPulse, label: "Frequência cardíaca na mesma tela" },
   { Icon: Sun, label: "Tela colorida, fácil de ler" },
-  { Icon: Pointer, label: "Tiras reagentes e lancetas inclusas" },
+  { Icon: Fingerprint, label: "Leitura pelo sensor, sem furar o dedo" },
 ] as const;
 
 const gallery = productGallery;
@@ -136,13 +136,13 @@ function Page() {
               Glicosímetro <span className="italic">digital.</span>
             </h1>
             <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--primary)]/10 px-4 py-2 text-sm font-medium text-[var(--primary)]">
-              <Pointer className="w-4 h-4 shrink-0" strokeWidth={1.5} />
-              <span>Picadinha rápida, só uma gotinha de sangue — sem aplicativo</span>
+              <Fingerprint className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+              <span>Sem furar o dedo, sem agulha, sem gota de sangue — sem aplicativo</span>
             </div>
             <p className="mt-5 text-[var(--ink)]/70 leading-relaxed text-[15px]">
-              Mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também mostra a frequência cardíaca em
-              poucos segundos. Faça a picadinha, encoste a gota na tira e leia os números na tela colorida. Escolha o
-              kit com 1, 2 ou 3 unidades — um para você e outros para quem você cuida.
+              Mede a glicose no sangue (mg/dL) pelo sensor no dedo, sem agulha e sem gota de sangue, e também mostra a
+              frequência cardíaca em poucos segundos. Encaixe o dedo, aperte o botão e leia os números na tela colorida.
+              Escolha o kit com 1, 2 ou 3 unidades — um para você e outros para quem você cuida.
             </p>
 
             {/* Bundle selector */}
@@ -232,7 +232,7 @@ function Page() {
             <Spec k="Operação" v="1 botão" />
             <Spec k="Dimensões" v="5,7 × 3,1 × 3 cm" />
             <Spec k="No kit" v={unitsLabel(bundle.units)} />
-            <Spec k="Uso" v="Doméstico · tiras e lanceta" />
+            <Spec k="Uso" v="Doméstico · sem agulha" />
             <Spec k="Garantia" v="7 dias + suporte" />
           </div>
         </div>
@@ -259,7 +259,7 @@ function Page() {
             </div>
             <ul className="space-y-5">
               {[
-                [`${bundle.units}× Glicosímetro GlicoMax`, "Tiras, lancetas e batimentos · tela colorida"],
+                [`${bundle.units}× Glicosímetro GlicoMax`, "Sensor no dedo, sem agulha · tela colorida"],
                 ["Envio com rastreamento", bundleShippingLabel(bundle)],
                 ["Suporte humano", "Ajuda com o pedido e com o uso do aparelho"],
                 ["Garantia de 7 dias", "Direito de arrependimento (Código de Defesa do Consumidor)"],
@@ -290,7 +290,7 @@ function ProductStructuredData() {
     name: brand.productName,
     image: productHeroImage,
     description:
-      "Glicosímetro GlicoMax: mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também a frequência cardíaca, com tela colorida. Kits de 1 a 3 unidades.",
+      "Glicosímetro GlicoMax: mede a glicose no sangue (mg/dL) pelo sensor no dedo, sem furar, e também a frequência cardíaca, com tela colorida. Kits de 1 a 3 unidades.",
     brand: {
       "@type": "Brand",
       name: brand.name,

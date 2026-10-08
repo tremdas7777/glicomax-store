@@ -34,7 +34,7 @@ export type Bundle = {
 };
 
 const PRODUCT_SUMMARY =
-  "glicosímetro que mede a glicose no sangue (mg/dL) com tiras reagentes e lancetas, e também mostra os batimentos cardíacos, com tela colorida e operação por um botão";
+  "glicosímetro que mede a glicose no sangue (mg/dL) pelo sensor no dedo, sem furar e sem agulha, e também mostra os batimentos cardíacos, com tela colorida e operação por um botão";
 
 export const bundles: Bundle[] = [
   {
