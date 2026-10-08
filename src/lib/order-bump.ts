@@ -1,4 +1,4 @@
-import imgVivicap from "@/assets/vivicap.jpg";
+import imgVivicap from "@/assets/vivicap.webp";
 
 /**
  * Order bumps do checkout (ofertas logo acima do botão de finalizar).
