@@ -67,10 +67,10 @@ function Page() {
                 <div className="flex justify-between gap-3">
                   <div>
                     <p className="font-medium">
-                      {main.bundleName} — Oxímetro GlicoMax
+                      {main.bundleName} — Glicosímetro GlicoMax
                     </p>
                     <p className="mt-0.5 text-muted-foreground">
-                      {unitsLabel(main.units)} · SpO2 e batimentos
+                      {unitsLabel(main.units)} · Glicose e batimentos
                     </p>
                     {(main.bumps ?? (main.bump ? [main.bump] : [])).map((b) => (
                       <p key={b.name} className="mt-0.5 text-muted-foreground">

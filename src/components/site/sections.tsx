@@ -27,7 +27,7 @@ export function EditorialBanner() {
         <StoreImage
           srcMobile={bannerWide.mobile}
           srcDesktop={bannerWide.desktop}
-          alt="Oxímetro GlicoMax — saturação e batimentos em segundos"
+          alt="Glicosímetro GlicoMax — glicose e batimentos em segundos"
           variant="section-banner"
           bg={brand.colors.primaryDeep}
           loading="lazy"
@@ -35,7 +35,7 @@ export function EditorialBanner() {
       </div>
       <div className="container-edge py-10 md:py-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
         <span className="eyebrow text-[var(--ink)]/60">
-          Kits de 1 a 3 unidades · SpO2 e batimentos · Tela colorida
+          Kits de 1 a 3 unidades · Glicose e batimentos · Tela colorida
         </span>
         <div className="flex items-center gap-4">
           <span className="rule" />
@@ -43,7 +43,7 @@ export function EditorialBanner() {
             to="/produto"
             className="text-xs font-bold uppercase tracking-[0.18em] hover:text-[var(--primary)] transition-colors"
           >
-            Conhecer o oxímetro
+            Conhecer o glicosímetro
           </Link>
         </div>
       </div>
@@ -63,13 +63,13 @@ export function Hero() {
               {brand.tagline}
             </span>
             <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-balance">
-              Saturação <br />e batimentos <br />
+              Glicose <br />e batimentos <br />
               <span className="italic">em segundos.</span>
             </h1>
           </div>
           <div className="lg:col-span-4 pb-2 fade-up" style={{ animationDelay: "120ms" }}>
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[var(--ink)]/70 mb-8 sm:mb-10 max-w-sm">
-              Coloque o dedo, aperte o botão e veja os números na tela. Sem picada, sem aplicativo.
+              Faça uma picadinha rápida, encoste a gota na tira e veja os números na tela. Sem aplicativo.
             </p>
             <div className="flex items-center gap-6">
               <span className="rule" />
@@ -81,7 +81,7 @@ export function Hero() {
               <StoreImage
                 srcMobile={heroSensor.mobile}
                 srcDesktop={heroSensor.desktop}
-                alt="Oxímetro de dedo GlicoMax"
+                alt="Glicosímetro GlicoMax"
                 variant="section-content"
                 bg={brand.colors.surfaceTint}
                 loading="lazy"
@@ -95,7 +95,7 @@ export function Hero() {
           <StoreImage
             srcMobile={heroSensor.mobile}
             srcDesktop={heroSensor.desktop}
-            alt="Oxímetro de dedo GlicoMax mostrando SpO2 e batimentos"
+            alt="Glicosímetro GlicoMax mostrando glicose e batimentos"
             variant="section-content"
             bg={brand.colors.surfaceTint}
           />
@@ -120,7 +120,7 @@ const trustItems = [
   },
   {
     title: "Suporte humano",
-    text: "Ajuda para escolher o kit, acompanhar o envio e tirar dúvidas sobre o uso do oxímetro.",
+    text: "Ajuda para escolher o kit, acompanhar o envio e tirar dúvidas sobre o uso do glicosímetro.",
   },
 ] as const;
 
@@ -144,8 +144,8 @@ export function TrustProofSection() {
 }
 
 const idealFor = [
-  "Quer conferir a saturação de oxigênio em casa, de forma rápida e sem picada.",
-  "Acompanha os batimentos no dia a dia ou depois de atividades físicas.",
+  "Quer acompanhar a glicose em casa, de forma rápida e com uma picadinha só.",
+  "Acompanha os batimentos cardíacos no dia a dia ou depois de atividades físicas.",
   "Cuida de familiares e quer um aparelho simples para ter sempre por perto.",
   "Gosta de anotar os números para conversar com o médico nas consultas.",
 ] as const;
@@ -172,7 +172,7 @@ export function IdealForSection() {
             ))}
           </div>
           <p className="mt-5 text-xs leading-relaxed text-[var(--ink)]/45">
-            O oxímetro GlicoMax é para acompanhamento em casa e não substitui avaliação médica. Em caso de falta de ar ou
+            O glicosímetro GlicoMax é para acompanhamento em casa e não substitui avaliação médica. Em caso de resultado muito alterado ou
             mal-estar, procure atendimento.
           </p>
         </div>
@@ -193,10 +193,10 @@ function NumberedHeader({ number, title }: { number: string; title: string }) {
 
 /* ---------- 01 — Como funciona ---------- */
 const steps = [
-  { n: "01", title: "Coloque o dedo", text: "Abra o clipe e encaixe o dedo indicador ou médio até o fim, com a unha para cima." },
-  { n: "02", title: "Aperte o botão", text: "O oxímetro liga com um toque — sem aplicativo, sem cadastro e sem configuração." },
-  { n: "03", title: "Aguarde alguns segundos", text: "Fique parado enquanto ele lê a luz que atravessa a ponta do dedo." },
-  { n: "04", title: "Veja os números", text: "A saturação (SpO2) e os batimentos por minuto aparecem na tela colorida." },
+  { n: "01", title: "Insira a tira", text: "Insira a tira reagente no glicosímetro — ele liga sozinho, sem aplicativo e sem configuração." },
+  { n: "02", title: "Faça a picadinha", text: "Use a lanceta para fazer uma picadinha rápida na ponta do dedo." },
+  { n: "03", title: "Encoste a gota", text: "Encoste a gotinha de sangue na tira e aguarde alguns segundos." },
+  { n: "04", title: "Veja os números", text: "A glicose (mg/dL) e os batimentos por minuto aparecem na tela colorida." },
 ];
 
 export function HowItWorks() {
@@ -223,22 +223,22 @@ export function HowItWorks() {
 const usageGuides = [
   {
     src: usePasso1,
-    alt: "Passo 1: aperte a parte de trás do oxímetro GlicoMax para abrir o clipe",
-    title: "Abrir o clipe",
+    alt: "Passo 1: insira a tira reagente no glicosímetro GlicoMax",
+    title: "Inserir a tira",
   },
   {
     src: usePasso2,
-    alt: "Passo 2: coloque o dedo indicador ou médio no oxímetro GlicoMax",
-    title: "Colocar o dedo",
+    alt: "Passo 2: faça a picadinha com a lanceta na ponta do dedo",
+    title: "Fazer a picadinha",
   },
   {
     src: usePasso3,
-    alt: "Passo 3: aperte o botão e aguarde alguns segundos",
-    title: "Ligar e aguardar",
+    alt: "Passo 3: encoste a gota de sangue na tira e aguarde alguns segundos",
+    title: "Encostar a gota",
   },
   {
     src: usePasso4,
-    alt: "Passo 4: leia a saturação (SpO2) e os batimentos na tela",
+    alt: "Passo 4: leia a glicose e os batimentos na tela",
     title: "Ler os números",
   },
 ] as const;
@@ -253,8 +253,7 @@ export function ProductUsageSection() {
             Coloque, aperte e leia: pronto em segundos.
           </h2>
           <p className="mt-5 text-sm md:text-base leading-relaxed text-[var(--ink)]/65">
-            Siga os quatro passos abaixo para fazer a medição. Para uma leitura estável, mantenha a mão parada, aquecida e
-            apoiada na altura do peito.
+            Siga os quatro passos abaixo para fazer a medição. Lave e seque bem as mãos antes de começar para um resultado mais preciso.
           </p>
         </div>
 
@@ -284,9 +283,9 @@ export function ProductUsageSection() {
 
 /* ---------- 02 — Recursos (imagem / lista) ---------- */
 const intel = [
-  "Saturação de oxigênio (SpO2)",
+  "Glicose no sangue (mg/dL)",
   "Frequência cardíaca (bpm)",
-  "Barra de intensidade do pulso",
+  "Tiras reagentes e lancetas inclusas",
   "Tela colorida de fácil leitura",
   "Compacto: 5,7 × 3,1 × 3 cm",
 ];
@@ -299,7 +298,7 @@ export function AppSplit() {
           <StoreImage
             srcMobile={appIphone.mobile}
             srcDesktop={appIphone.desktop}
-            alt="Medidas do oxímetro GlicoMax: 5,7 × 3,1 × 3 cm"
+            alt="Medidas do glicosímetro GlicoMax: 5,7 × 3,1 × 3 cm"
             variant="section-full"
             bg="#ffffff"
             loading="lazy"
@@ -308,7 +307,7 @@ export function AppSplit() {
         <div className="order-1 lg:order-2">
           <NumberedHeader number="02" title="Recursos" />
           <p className="font-display italic text-xl md:text-2xl text-[var(--ink)]/80 mb-12 leading-snug max-w-md">
-            "Números grandes e coloridos: a saturação em cima, os batimentos embaixo."
+            "Números grandes e coloridos: a glicose em cima, os batimentos embaixo."
           </p>
           <ul>
             {intel.map((t) => (
@@ -326,11 +325,11 @@ export function AppSplit() {
 
 /* ---------- 03 — Comparison editorial table ---------- */
 const compRows = [
-  ["Saturação de oxigênio (SpO2)", true, false],
+  ["Glicose no sangue (mg/dL)", true, false],
   ["Batimentos por minuto", true, true],
   ["Resultado em segundos", true, false],
   ["Sem contar no relógio", true, false],
-  ["Indicador de intensidade do pulso", true, false],
+  ["Tiras reagentes e lancetas inclusas", true, false],
   ["Números na tela", true, false],
 ] as const;
 
@@ -340,7 +339,7 @@ export function Comparison() {
       <div className="container-edge">
         <NumberedHeader number="03" title="GlicoMax vs Contar o Pulso" />
         <p className="mb-10 max-w-2xl text-sm md:text-base leading-relaxed text-[var(--ink)]/65">
-          Contar o pulso no relógio dá trabalho e não mostra a saturação de oxigênio. O GlicoMax mostra os dois números na
+          Contar o pulso no relógio dá trabalho e não mostra a sua glicose. O GlicoMax mostra os dois números na
           tela em poucos segundos.
         </p>
         <div className="border border-[rgba(13,13,13,0.1)] rounded-xl overflow-hidden">
@@ -435,7 +434,7 @@ export function EditorialQuote() {
           <StoreImage
             srcMobile={lifestyleRunning.mobile}
             srcDesktop={lifestyleRunning.desktop}
-            alt="Oxímetro GlicoMax na mesa de cabeceira"
+            alt="Glicosímetro GlicoMax na mesa de cabeceira"
             variant="section-full"
             loading="lazy"
           />
@@ -443,7 +442,7 @@ export function EditorialQuote() {
         <div className="lg:col-span-5">
           <span className="eyebrow text-[var(--ink)]/40">No dia a dia</span>
           <blockquote className="font-display text-3xl md:text-5xl leading-tight mt-6 text-balance">
-            Coloque o dedo, aperte o botão e pronto: a saturação e os batimentos aparecem na tela.
+            Faça a picadinha, encoste a gota na tira e pronto: a glicose e os batimentos aparecem na tela.
           </blockquote>
           <div className="mt-10 flex items-center gap-4">
             <span className="rule" />
@@ -453,7 +452,7 @@ export function EditorialQuote() {
             </div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-4">
-            <Highlight title="Para a família" sub="Um em cada casa" text="Com os kits de 2 e 3 unidades, cada pessoa tem o seu oxímetro por perto." />
+            <Highlight title="Para a família" sub="Um em cada casa" text="Com os kits de 2 e 3 unidades, cada pessoa tem o seu glicosímetro por perto." />
             <Highlight title="Para levar" sub="Cabe no bolso" text="Leve na bolsa ou na mala: são só 5,7 × 3,1 × 3 cm." />
           </div>
         </div>
@@ -478,30 +477,30 @@ const [kit1, kit2, kit3] = bundleData;
 
 export const faqItems = [
   {
-    q: "O que é um oxímetro de dedo?",
-    a: "É um aparelho que, preso na ponta do dedo, mede a saturação de oxigênio no sangue (SpO2) e a frequência cardíaca usando a luz que atravessa o dedo. Não precisa de picada.",
+    q: "O que é um glicosímetro?",
+    a: "É um aparelho que mede a glicose no sangue (mg/dL) a partir de uma gotinha de sangue colhida com uma picadinha rápida na ponta do dedo, usando uma tira reagente. O GlicoMax também mostra os batimentos cardíacos na mesma tela.",
   },
   {
     q: "O GlicoMax mede glicose?",
-    a: "Não. Apesar do nome, o GlicoMax é um oxímetro: mede a saturação de oxigênio (SpO2) e os batimentos por minuto. Para medir glicose, use um glicosímetro ou sensor indicado pelo seu médico.",
+    a: "Sim. O GlicoMax é um glicosímetro: mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também mostra os batimentos cardíacos (bpm) na mesma leitura.",
   },
   {
     q: "Como usar?",
-    a: "Abra o clipe, coloque o dedo indicador ou médio com a unha para cima, aperte o botão e aguarde alguns segundos parado. A saturação aparece em cima e os batimentos embaixo.",
+    a: "Lave e seque bem as mãos, insira a tira reagente no aparelho, faça uma picadinha rápida na ponta do dedo com a lanceta e encoste a gotinha de sangue na tira. Em poucos segundos, a glicose e os batimentos aparecem na tela.",
   },
   {
     q: "Qual a diferença entre os kits?",
     a: `Oferecemos 3 kits: ${unitsLabel(kit1!.units)} por ${fmt(kit1!.price)}; ${unitsLabel(kit2!.units)} por ${fmt(kit2!.price)} — o mais vendido; e ${unitsLabel(kit3!.units)} por ${fmt(kit3!.price)}, ideal para a família.`,
   },
   {
-    q: "O que pode atrapalhar a leitura?",
-    a: "Mãos frias, movimento durante a medição, esmalte escuro ou unhas postiças e luz forte sobre o aparelho podem alterar o resultado. Circulação ruim e a pigmentação da pele também podem influenciar. Aqueça as mãos, fique parado e, se precisar, use outro dedo.",
+    q: "O kit já vem com tiras e lancetas?",
+    a: "Sim. Cada kit inclui o glicosímetro GlicoMax, tiras reagentes e lancetas para você começar a usar assim que chegar.",
   },
   {
-    q: "O oxímetro substitui o médico?",
-    a: "Não. Ele serve para acompanhar em casa. Se a saturação estiver baixa, ou se você sentir falta de ar ou mal-estar, procure atendimento médico.",
+    q: "O glicosímetro substitui o médico?",
+    a: "Não. Ele serve para acompanhar a glicose e os batimentos em casa. Os resultados não substituem avaliação médica, e qualquer alteração deve ser discutida com o seu médico.",
   },
-  { q: "Precisa de aplicativo ou celular?", a: "Não. Os números aparecem na própria tela do oxímetro." },
+  { q: "Precisa de aplicativo ou celular?", a: "Não. Os números aparecem na própria tela do glicosímetro." },
   { q: "Qual o tamanho do aparelho?", a: "5,7 × 3,1 × 3 cm — cabe no bolso, na bolsa ou na gaveta." },
   { q: "Como funciona o envio?", a: `${FREE_SHIPPING_LABEL} com rastreamento para todo o Brasil. Detalhes em nossa política de envio.` },
   { q: "Em quanto tempo recebo?", a: "O prazo depende do frete escolhido no checkout e aparece antes do pagamento." },

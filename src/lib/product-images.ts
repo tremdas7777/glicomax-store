@@ -17,8 +17,8 @@ export const bannerGallery: BannerSlide[] = [
   {
     mobile: bannerStoreMobile,
     desktop: bannerStoreDesktop,
-    alt: "Oxímetro GlicoMax — saturação e batimentos em segundos",
-    caption: "SpO2 · Frequência cardíaca · Tela colorida",
+    alt: "Glicosímetro GlicoMax — glicose e batimentos em segundos",
+    caption: "Glicose · Frequência cardíaca · Tela colorida",
     bg: "#E6F3FB",
   },
 ];
@@ -35,19 +35,19 @@ export type GalleryItem = {
 export const productGallery: GalleryItem[] = [
   {
     src: imgProduto,
-    alt: "Oxímetro de dedo GlicoMax mostrando SpO2 e batimentos",
-    caption: "SpO2 e batimentos na tela",
+    alt: "Glicosímetro GlicoMax mostrando glicose e batimentos",
+    caption: "Glicose e batimentos na tela",
     bg: "#ffffff",
   },
   {
     src: imgMedidas,
-    alt: "Medidas do oxímetro GlicoMax: 5,7 × 3,1 × 3 cm",
+    alt: "Medidas do glicosímetro GlicoMax: 5,7 × 3,1 × 3 cm",
     caption: "Compacto · 5,7 × 3,1 × 3 cm",
     bg: "#ffffff",
   },
   {
     src: imgUsoNoite,
-    alt: "Oxímetro GlicoMax sobre a mesa de cabeceira",
+    alt: "Glicosímetro GlicoMax sobre a mesa de cabeceira",
     caption: "Para usar em casa",
   },
 ];

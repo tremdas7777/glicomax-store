@@ -5,16 +5,16 @@ import { FaqSection, CtaFinal } from "@/components/site/sections";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Perguntas Frequentes | Oxímetro de Dedo GlicoMax" },
+      { title: "Perguntas Frequentes | Glicosímetro GlicoMax" },
       {
         name: "description",
         content:
-          "Tire dúvidas sobre o oxímetro de dedo GlicoMax: como usar, o que ele mede, o que pode atrapalhar a leitura, kits, envio e garantia.",
+          "Tire dúvidas sobre o glicosímetro GlicoMax: como usar, o que ele mede, tiras e lancetas, kits, envio e garantia.",
       },
-      { property: "og:title", content: "Perguntas frequentes sobre o oxímetro GlicoMax" },
+      { property: "og:title", content: "Perguntas frequentes sobre o glicosímetro GlicoMax" },
       {
         property: "og:description",
-        content: "Saiba como funciona o oxímetro de dedo GlicoMax, os kits e o envio.",
+        content: "Saiba como funciona o glicosímetro GlicoMax, os kits e o envio.",
       },
       { property: "og:url", content: "/faq" },
     ],

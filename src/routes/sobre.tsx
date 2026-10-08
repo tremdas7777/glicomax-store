@@ -7,10 +7,10 @@ import { brand } from "@/lib/brand";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre a GlicoMax | Oxímetro de dedo" },
-      { name: "description", content: "A GlicoMax reúne em um aparelho de bolso a saturação de oxigênio e os batimentos, para acompanhar a saúde em casa." },
+      { title: "Sobre a GlicoMax | Glicosímetro" },
+      { name: "description", content: "A GlicoMax reúne em um aparelho de bolso a medição de glicose e os batimentos cardíacos, para acompanhar a saúde em casa." },
       { property: "og:title", content: "Sobre a GlicoMax" },
-      { property: "og:description", content: "Saturação e batimentos na ponta do dedo, em segundos." },
+      { property: "og:description", content: "Glicose e batimentos na ponta do dedo, em segundos." },
       { property: "og:url", content: "/sobre" },
     ],
     links: [{ rel: "canonical", href: "/sobre" }],
@@ -31,7 +31,7 @@ function Page() {
           </div>
           <div className="lg:col-span-4 pb-4">
             <p className="text-lg text-[var(--ink)]/70 leading-relaxed">
-              A GlicoMax reúne em um aparelho de bolso duas medidas importantes: a saturação de oxigênio e os batimentos do coração.
+              A GlicoMax reúne em um aparelho de bolso duas medidas importantes: a glicose no sangue e os batimentos do coração.
             </p>
           </div>
         </div>
@@ -42,7 +42,7 @@ function Page() {
           <StoreImage
             srcMobile={homeImages.lifestyleRunning.mobile}
             srcDesktop={homeImages.lifestyleRunning.desktop}
-            alt="Oxímetro GlicoMax na mesa de cabeceira"
+            alt="Glicosímetro GlicoMax na mesa de cabeceira"
             variant="section-banner"
             bg={brand.colors.surfaceTint}
             loading="lazy"

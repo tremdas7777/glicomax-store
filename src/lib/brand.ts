@@ -1,9 +1,9 @@
-/** Marca da loja — GlicoMax (oxímetro de dedo) */
+/** Marca da loja — GlicoMax (glicosímetro) */
 export const brand = {
   name: "GlicoMax",
-  productName: "Oxímetro GlicoMax",
-  tagline: "Oxímetro de Dedo",
-  taglineShort: "SpO2 e batimentos em segundos",
+  productName: "Glicosímetro GlicoMax",
+  tagline: "Glicosímetro Digital",
+  taglineShort: "Glicose e batimentos em segundos",
   /**
    * Dados da empresa — preencha antes de publicar. Campos vazios ficam ocultos
    * no rodapé, no contato e nas políticas.

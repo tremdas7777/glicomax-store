@@ -20,8 +20,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 import appCss from "../styles.css?url";
 
-const TITLE = "Oxímetro de Dedo GlicoMax | Saturação e Batimentos em Segundos";
-const DESCRIPTION = `Oxímetro de dedo GlicoMax: mede a saturação de oxigênio (SpO2) e a frequência cardíaca em segundos, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`;
+const TITLE = "Glicosímetro GlicoMax | Glicose e Batimentos em Segundos";
+const DESCRIPTION = `Glicosímetro GlicoMax: mede a glicose no sangue (mg/dL) com tiras reagentes e lanceta, e também mostra os batimentos cardíacos em segundos, com tela colorida. Kits de 1 a 3 unidades. ${FREE_SHIPPING_LABEL}.`;
 
 /** Scripts de pixel do <head> — só entram os que têm ID em src/lib/pixels.ts. */
 function pixelScripts() {
@@ -117,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "oxímetro de dedo, oxímetro, saturação de oxigênio, SpO2, frequência cardíaca, batimentos, GlicoMax",
+          "glicosímetro, medidor de glicose, glicose no sangue, tiras reagentes, lanceta, frequência cardíaca, batimentos, GlicoMax",
       },
       { name: "robots", content: "index,follow" },
       { property: "og:site_name", content: brand.name },
@@ -134,7 +134,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             { property: "og:image", content: `${brand.siteUrl}/og-image.jpg` },
             { property: "og:image:width", content: "1200" },
             { property: "og:image:height", content: "630" },
-            { property: "og:image:alt", content: "Oxímetro de dedo GlicoMax" },
+            { property: "og:image:alt", content: "Glicosímetro GlicoMax" },
             { name: "twitter:image", content: `${brand.siteUrl}/og-image.jpg` },
           ]
         : []),

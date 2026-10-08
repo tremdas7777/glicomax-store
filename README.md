@@ -1,6 +1,6 @@
 # Glicomax Store
 
-Loja do oxímetro de dedo GlicoMax, feita a partir da estrutura da loja AiDEX (painel `/admin`,
+Loja do glicosímetro GlicoMax, feita a partir da estrutura da loja AiDEX (painel `/admin`,
 checkout Pix/cartão, order bumps, upsell, envio expresso, UTMify, Meta e Rotasync).
 
 ## Antes de publicar

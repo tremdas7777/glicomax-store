@@ -8,7 +8,7 @@ export type PixSession = {
   name: string;
   bundleId: string;
   bundleName: string;
-  /** Quantidade de oxímetros do kit (0 em cobranças sem produto, ex.: só envio expresso). */
+  /** Quantidade de glicosímetros do kit (0 em cobranças sem produto, ex.: só envio expresso). */
   units: number;
   productPrice: number;
   /** Order bumps aceitos no checkout (valor em reais). */

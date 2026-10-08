@@ -6,7 +6,7 @@ export const Route = createFileRoute("/politica-envio")({
   head: () => ({
     meta: [
       { title: "Política de Envio | GlicoMax" },
-      { name: "description", content: "Saiba como funciona o envio do oxímetro GlicoMax." },
+      { name: "description", content: "Saiba como funciona o envio do glicosímetro GlicoMax." },
       { property: "og:title", content: "Política de Envio" },
       { property: "og:description", content: "Envio para todo o Brasil com rastreamento." },
       { property: "og:url", content: "/politica-envio" },
