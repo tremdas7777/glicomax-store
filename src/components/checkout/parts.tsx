@@ -68,11 +68,14 @@ export function Field({ label, ok, prefix, wrap, className, ...rest }: FieldProp
   );
 }
 
-export function GreenButton({ children, ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+export function GreenButton({ children, className, ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
       {...rest}
-      className="flex h-14 w-full items-center justify-center gap-2 rounded-md bg-[var(--ck-green)] text-base font-semibold text-primary-foreground hover:brightness-95 disabled:opacity-60"
+      className={cn(
+        "flex h-14 w-full items-center justify-center gap-2 rounded-md bg-[var(--primary)] text-base font-semibold text-primary-foreground hover:brightness-95 disabled:opacity-60",
+        className,
+      )}
     >
       {children}
     </button>
