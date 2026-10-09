@@ -5,4 +5,4 @@
  */
 export const META_PIXEL_ID = "";
 export const TIKTOK_PIXEL_ID = "";
-export const UTMIFY_PIXEL_ID = "6ab7091580efae7d134f34bd";
+export const UTMIFY_PIXEL_ID = "6ac846f1726fbe71503fc3e9";
