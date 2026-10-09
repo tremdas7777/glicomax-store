@@ -10,6 +10,7 @@ import { PixGatewayCard } from "@/components/admin/PixGatewayCard";
 import { MetaPixelCard } from "@/components/admin/MetaPixelCard";
 import { OrdersTab } from "@/components/admin/OrdersTab";
 import { AbandonedTab } from "@/components/admin/AbandonedTab";
+import { ProfitTab } from "@/components/admin/ProfitTab";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -247,10 +248,15 @@ function AdminPage() {
             <TabsTrigger value="funil">Funil</TabsTrigger>
             <TabsTrigger value="pedidos">Pedidos</TabsTrigger>
             <TabsTrigger value="abandonados">Checkouts abandonados</TabsTrigger>
+            <TabsTrigger value="lucro">Lucro</TabsTrigger>
           </TabsList>
 
           <TabsContent value="pedidos">
             <OrdersTab password={password} />
+          </TabsContent>
+
+          <TabsContent value="lucro">
+            <ProfitTab password={password} />
           </TabsContent>
 
           <TabsContent value="abandonados">
