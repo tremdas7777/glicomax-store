@@ -39,20 +39,56 @@ export type PixSession = {
 };
 
 const key = (id: string) => `pix:${id}`;
+/** Pedidos guardados em localStorage somem depois deste prazo. */
+const MAX_AGE_MS = 3 * 24 * 60 * 60 * 1000;
 
+/**
+ * Guarda a sessão em localStorage (vale para qualquer aba: no celular o cliente sai para o app do
+ * banco e muitas vezes volta numa aba nova ou recarregada — sem isso ele pulava o upsell).
+ * O token do cartão fica só no sessionStorage desta aba.
+ */
 export function savePixSession(s: PixSession): void {
   try {
     sessionStorage.setItem(key(s.id), JSON.stringify(s));
   } catch {
     // storage indisponível — a tela /pedido cai no fallback
   }
+  try {
+    const { cardHash: _cardHash, ...persisted } = s;
+    pruneOld();
+    localStorage.setItem(key(s.id), JSON.stringify(persisted));
+  } catch {
+    // storage indisponível
+  }
 }
 
 export function loadPixSession(id: string): PixSession | null {
-  try {
-    const raw = sessionStorage.getItem(key(id));
-    return raw ? (JSON.parse(raw) as PixSession) : null;
-  } catch {
-    return null;
+  const read = (st: Storage) => {
+    try {
+      const raw = st.getItem(key(id));
+      return raw ? (JSON.parse(raw) as PixSession) : null;
+    } catch {
+      return null;
+    }
+  };
+  const tab = typeof sessionStorage === "undefined" ? null : read(sessionStorage);
+  const shared = typeof localStorage === "undefined" ? null : read(localStorage);
+  // localStorage tem o progresso mais recente (upsellId/expressId salvos em outra aba);
+  // a aba atual completa com o token do cartão.
+  if (!tab && !shared) return null;
+  return { ...(tab ?? {}), ...(shared ?? {}), cardHash: tab?.cardHash } as PixSession;
+}
+
+function pruneOld(): void {
+  const now = Date.now();
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const k = localStorage.key(i);
+    if (!k?.startsWith("pix:")) continue;
+    try {
+      const s = JSON.parse(localStorage.getItem(k) ?? "null") as PixSession | null;
+      if (!s || now - (s.createdAt ?? 0) > MAX_AGE_MS) localStorage.removeItem(k);
+    } catch {
+      localStorage.removeItem(k);
+    }
   }
 }
