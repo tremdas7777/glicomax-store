@@ -657,6 +657,7 @@ function Page() {
                 )}
                 <GreenButton
                   type="button"
+                  className="bg-[var(--ck-green)]"
                   disabled={mutation.isPending}
                   onClick={() => mutation.mutate()}
                 >
