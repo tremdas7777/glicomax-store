@@ -249,9 +249,19 @@ function CampaignsTable({ campaigns, loading }: { campaigns: CampaignProfit[]; l
             </thead>
             <tbody>
               {campaigns.map((c) => (
-                <tr key={c.campaignId} className="border-t">
+                <tr
+                  key={c.campaignId}
+                  className={`border-t ${c.included ? "" : "text-muted-foreground opacity-60"}`}
+                >
                   <td className="px-4 py-2">
-                    <div className="font-medium">{c.campaignName}</div>
+                    <div className="font-medium">
+                      {c.campaignName}
+                      {!c.included && (
+                        <span className="ml-2 rounded bg-muted px-1.5 py-0.5 text-[10px] font-normal uppercase">
+                          outra oferta · não conta
+                        </span>
+                      )}
+                    </div>
                     {multiAccount && (
                       <div className="text-xs text-muted-foreground">{c.accountName}</div>
                     )}
@@ -285,7 +295,8 @@ function CampaignsTable({ campaigns, loading }: { campaigns: CampaignProfit[]; l
       </Card>
       <p className="text-xs text-muted-foreground">
         Vendas por campanha vêm da utm_campaign do pedido (padrão UTMify “nome|id”). Vendas sem UTM
-        entram no total do período, mas não em nenhuma campanha.
+        entram no total do período, mas não em nenhuma campanha. Campanhas em cinza não passam no
+        filtro da oferta (em “Configurar”) e não entram no lucro.
       </p>
     </section>
   );
@@ -352,6 +363,7 @@ function ProfitSettingsCard({
   const loadFn = useServerFn(getProfitSettings);
   const saveFn = useServerFn(saveProfitSettings);
   const [disabled, setDisabled] = useState<string[]>([]);
+  const [campaignFilter, setCampaignFilter] = useState("");
   const [token, setToken] = useState("");
   const [tokenHint, setTokenHint] = useState("");
   const [tokenSource, setTokenSource] = useState<"ads" | "capi" | null>(null);
@@ -366,6 +378,7 @@ function ProfitSettingsCard({
     loadFn({ data: { password } })
       .then((r) => {
         setDisabled(r.disabledAccounts);
+        setCampaignFilter(r.campaignFilter);
         setTokenHint(r.tokenHint);
         setTokenSource(r.tokenSource);
         setAdsTaxPct(String(r.adsTaxPct).replace(".", ","));
@@ -386,6 +399,7 @@ function ProfitSettingsCard({
         data: {
           password,
           disabledAccounts: disabled,
+          campaignFilter,
           token: token || undefined,
           adsTaxPct: toNum(adsTaxPct),
           gatewayPct: toNum(gatewayPct),
@@ -447,6 +461,16 @@ function ProfitSettingsCard({
             ))}
           </div>
         </div>
+        <label className="md:col-span-4 text-xs text-muted-foreground space-y-1">
+          <span>
+            Campanhas desta oferta — o nome contém (separe por vírgula; vazio = todas as campanhas)
+          </span>
+          <Input
+            value={campaignFilter}
+            onChange={(e) => setCampaignFilter(e.target.value)}
+            placeholder="glico, glicomax"
+          />
+        </label>
         <label className="text-xs text-muted-foreground space-y-1">
           <span>Token {tokenHint && `(atual ${tokenHint})`}</span>
           <Input

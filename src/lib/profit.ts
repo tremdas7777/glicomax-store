@@ -113,6 +113,8 @@ export type CampaignSpendRow = {
 
 export type CampaignProfit = {
   campaignId: string;
+  /** Passa no filtro de nome da oferta (só estas entram no lucro). */
+  included: boolean;
   campaignName: string;
   accountName: string;
   spend: number;
@@ -123,6 +125,24 @@ export type CampaignProfit = {
   profit: number;
   roas: number | null;
 };
+
+const fold = (v: string) =>
+  v
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
+/**
+ * A campanha é desta oferta? O filtro é uma lista separada por vírgula ("glico, glicomax"):
+ * basta o nome conter um dos termos (sem diferenciar maiúscula nem acento). Vazio = todas.
+ */
+export function campaignInOffer(name: string, filter: string | null | undefined): boolean {
+  const terms = (filter ?? "").split(",").map(fold).filter(Boolean);
+  if (!terms.length) return true;
+  const n = fold(name);
+  return terms.some((t) => n.includes(t));
+}
 
 /** Gasto do Meta somado por dia (todas as campanhas e contas). */
 export function spendByDay(rows: CampaignSpendRow[]): Record<string, number> {
@@ -147,12 +167,15 @@ export function computeCampaigns(input: {
   spendRows: CampaignSpendRow[];
   paidOrders: { amount_cents: number; utm?: Record<string, string | null> | null }[];
   settings: ProfitSettings;
+  /** Filtro de nome da oferta (ver campaignInOffer). */
+  filter?: string;
 }): CampaignProfit[] {
   const s = input.settings;
   const byId = new Map<string, CampaignProfit>();
   for (const r of input.spendRows) {
     const c: CampaignProfit = byId.get(r.campaignId) ?? {
       campaignId: r.campaignId,
+      included: campaignInOffer(r.campaignName, input.filter),
       campaignName: r.campaignName,
       accountName: r.accountName,
       spend: 0,
@@ -181,5 +204,7 @@ export function computeCampaigns(input: {
     c.spend = round2(c.spend);
     c.revenue = round2(c.revenue);
   }
-  return campaigns.filter((c) => c.spend > 0 || c.orders > 0).sort((a, b) => b.spend - a.spend);
+  return campaigns
+    .filter((c) => c.spend > 0 || c.orders > 0)
+    .sort((a, b) => Number(b.included) - Number(a.included) || b.spend - a.spend);
 }

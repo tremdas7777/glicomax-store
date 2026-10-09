@@ -10,6 +10,7 @@ const KEYS = {
   gatewayPct: "profit_gateway_pct",
   gatewayFixed: "profit_gateway_fixed",
   manualSpend: "profit_manual_spend",
+  campaignFilter: "profit_campaign_filter",
 } as const;
 
 async function db() {
@@ -51,6 +52,8 @@ export type ProfitConfig = {
   tokenSource: "ads" | "capi" | null;
   settings: ProfitSettings;
   manualSpend: Record<string, number>;
+  /** Termos do nome das campanhas desta oferta, separados por vírgula. Vazio = todas. */
+  campaignFilter: string;
 };
 
 export async function getProfitConfig(): Promise<ProfitConfig> {
@@ -67,6 +70,7 @@ export async function getProfitConfig(): Promise<ProfitConfig> {
       gatewayFixed: num(m.get(KEYS.gatewayFixed), 0),
     },
     manualSpend: parseJson<Record<string, number>>(m.get(KEYS.manualSpend), {}),
+    campaignFilter: m.get(KEYS.campaignFilter) ?? "",
   };
 }
 
@@ -80,11 +84,13 @@ function parseJson<T>(v: string | null | undefined, fallback: T): T {
 
 export async function saveProfitConfig(c: {
   disabledAccounts: string[];
+  campaignFilter: string;
   token?: string;
   settings: ProfitSettings;
 }) {
   const rows: { key: string; value: string }[] = [
     { key: KEYS.disabledAccounts, value: JSON.stringify(c.disabledAccounts) },
+    { key: KEYS.campaignFilter, value: c.campaignFilter },
     { key: KEYS.adsTaxPct, value: String(c.settings.adsTaxPct) },
     { key: KEYS.gatewayPct, value: String(c.settings.gatewayPct) },
     { key: KEYS.gatewayFixed, value: String(c.settings.gatewayFixed) },

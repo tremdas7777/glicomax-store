@@ -10,6 +10,7 @@ import {
   type AdAccount,
 } from "./meta-ads.server";
 import {
+  campaignInOffer,
   computeCampaigns,
   computeProfit,
   lastDays,
@@ -103,14 +104,22 @@ export const getProfitReport = createServerFn({ method: "POST" })
       const { rows, totals } = computeProfit({
         days,
         paidOrders,
-        metaSpend: spendByDay(spendRows),
+        // Só o gasto das campanhas desta oferta entra no lucro.
+        metaSpend: spendByDay(
+          spendRows.filter((r) => campaignInOffer(r.campaignName, cfg.campaignFilter)),
+        ),
         manualSpend: cfg.manualSpend,
         settings: cfg.settings,
       });
       return {
         rows: rows.reverse(),
         totals,
-        campaigns: computeCampaigns({ spendRows, paidOrders, settings: cfg.settings }),
+        campaigns: computeCampaigns({
+          spendRows,
+          paidOrders,
+          settings: cfg.settings,
+          filter: cfg.campaignFilter,
+        }),
         accounts: accounts.sort((a, b) => a.name.localeCompare(b.name)),
         metaError,
       };
@@ -124,6 +133,7 @@ export const getProfitSettings = createServerFn({ method: "POST" })
     const c = await getProfitConfig();
     return {
       disabledAccounts: c.disabledAccounts,
+      campaignFilter: c.campaignFilter,
       tokenSource: c.tokenSource,
       tokenHint: c.token ? `••••${c.token.slice(-4)}` : "",
       ...c.settings,
@@ -136,6 +146,7 @@ export const saveProfitSettings = createServerFn({ method: "POST" })
       .object({
         password: pwd,
         disabledAccounts: z.array(z.string().regex(/^\d{1,25}$/)).max(500),
+        campaignFilter: z.string().trim().max(300).default(""),
         token: z.string().trim().max(600).optional(),
         adsTaxPct: z.number().min(0).max(100),
         gatewayPct: z.number().min(0).max(100),
@@ -147,6 +158,7 @@ export const saveProfitSettings = createServerFn({ method: "POST" })
     assertAdmin(data.password);
     await saveProfitConfig({
       disabledAccounts: data.disabledAccounts,
+      campaignFilter: data.campaignFilter,
       token: data.token || undefined,
       settings: {
         adsTaxPct: data.adsTaxPct,

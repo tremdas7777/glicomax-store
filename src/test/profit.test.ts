@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   brtDay,
+  campaignInOffer,
   computeCampaigns,
   computeProfit,
   lastDays,
@@ -97,5 +98,45 @@ describe("campanhas", () => {
     // 200 − 100 − 13 = 87
     expect(campaigns[0]).toMatchObject({ spend: 100, orders: 1, revenue: 200, profit: 87 });
     expect(campaigns[1]).toMatchObject({ spend: 30, orders: 0, profit: -33.9 });
+  });
+});
+
+describe("filtro da oferta", () => {
+  it("compara pelo nome, sem maiúscula nem acento; vazio = todas", () => {
+    expect(campaignInOffer("[CBO] GlicoMax - Público Frio", "glico")).toBe(true);
+    expect(campaignInOffer("Glicómax teste", "glicomax")).toBe(true);
+    expect(campaignInOffer("Lentes - Remarketing", "glico, glicomax")).toBe(false);
+    expect(campaignInOffer("Qualquer", "")).toBe(true);
+    expect(campaignInOffer("Qualquer", " , ")).toBe(true);
+  });
+
+  it("marca campanhas fora da oferta e põe por último", () => {
+    const campaigns = computeCampaigns({
+      spendRows: [
+        {
+          accountId: "1",
+          accountName: "C",
+          campaignId: "1",
+          campaignName: "Lentes",
+          day: "2026-10-09",
+          spend: 500,
+        },
+        {
+          accountId: "1",
+          accountName: "C",
+          campaignId: "2",
+          campaignName: "GLICO",
+          day: "2026-10-09",
+          spend: 50,
+        },
+      ],
+      paidOrders: [],
+      settings: { adsTaxPct: 13, gatewayPct: 0, gatewayFixed: 0 },
+      filter: "glico",
+    });
+    expect(campaigns.map((c) => [c.campaignId, c.included])).toEqual([
+      ["2", true],
+      ["1", false],
+    ]);
   });
 });
