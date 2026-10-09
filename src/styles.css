@@ -211,15 +211,15 @@
 
 /* Checkout — replica do checkout antigo (verde) */
 .ck {
-  --ck-green: #6cc551;
+  --ck-green: #16a34a;
   --ck-footer: #075985;
   --ck-ok: #0e8f5b;
   --ck-field: #e8f0fe;
-  --ck-blue: #2f6fed;
+  --ck-blue: #0284c7;
   --ck-pix: #32bcad;
   --ck-badge: #c9f2c0;
   font-family: "Inter", system-ui, sans-serif;
 }
-.ck { --ck-bg: #ffffff; background: var(--ck-bg); }
+.ck { --ck-bg: #f3f8fc; background: var(--ck-bg); }
 .ck h1, .ck h2, .ck h3 { font-family: inherit; letter-spacing: normal; }
 .ck .ck-surface { background: var(--ck-bg); }
