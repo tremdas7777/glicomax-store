@@ -16,7 +16,7 @@ const coverDesktop =
 const coverMobile =
   "linear-gradient(90deg,#f0f9ff 0%,#edf8fe 11%,#e9f6fe 22%,#e7f6fd 33%,#e4f2fb 50%,#dff0fa 67%,#daeef9 83%,#d8ebf9 96%)";
 
-const maskMobile = "linear-gradient(180deg,#000 0%,#000 70%,rgba(0,0,0,0) 100%)";
+const maskMobile = "linear-gradient(180deg,#000 0%,#000 80%,rgba(0,0,0,0) 100%)";
 
 export function HeroBanner() {
   return (
@@ -34,7 +34,7 @@ export function HeroBanner() {
 
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-[47%] md:hidden"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[44%] md:hidden"
           style={{ backgroundImage: coverMobile, maskImage: maskMobile, WebkitMaskImage: maskMobile }}
         />
         <div
@@ -52,7 +52,7 @@ export function HeroBanner() {
                 <br />
                 <span className="italic text-[var(--primary-deep)]">sem furar o dedo.</span>
               </h1>
-              <p className="mt-3 max-w-[24rem] text-[0.78rem] leading-relaxed text-[var(--ink)]/70 md:text-sm">
+              <p className="mt-3 hidden max-w-[24rem] text-[0.78rem] leading-relaxed text-[var(--ink)]/70 md:block md:text-sm">
                 Sensor no dedo: sem agulha, sem lanceta, sem gota de sangue e sem tiras. Os batimentos
                 aparecem na mesma tela.
               </p>
@@ -77,7 +77,10 @@ export function HeroBanner() {
 
       <div className="border-b border-[rgba(13,13,13,0.08)] bg-[var(--paper)]">
         <div className="container-edge flex flex-col items-start justify-between gap-4 py-5 sm:flex-row sm:items-center sm:py-6">
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--ink)]/55">
+          <p className="text-sm leading-relaxed text-[var(--ink)]/70 md:hidden">
+            Sensor no dedo: sem agulha, sem lanceta, sem gota de sangue e sem tiras.
+          </p>
+          <p className="hidden text-xs font-medium uppercase tracking-[0.16em] text-[var(--ink)]/55 md:block">
             Glicosímetro GlicoMax · Glicose e batimentos em segundos · Sem furar o dedo · {FREE_SHIPPING_LABEL}
           </p>
           <div className="flex items-center md:hidden">
